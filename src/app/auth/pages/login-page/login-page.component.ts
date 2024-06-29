@@ -25,6 +25,7 @@ export class LoginPageComponent {
     this.authService.login(email, password)
     .subscribe({
       next: () => {
+        //Validamos el token para poder llegar a dashboard con un guard
         this.router.navigate(['./dashboard'])
       },
       error: (message) => {
